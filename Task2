@@ -1,0 +1,31 @@
+* C program to perform temperature conversion using function (macros)
+ */
+ 
+#include<stdio.h>
+//FUNCTION LIKE MACROS IN C LANGUAGE ->
+#define CelsiusToKelvin(Celsius)(Celsius + 273.15)
+#define CelsiusToFahrenheit(Celcius)( (Celsius * 1.8) + 32.0)
+ 
+#define KelvintoCelsius(Kelvin) (Kelvin - 273.15)
+#define KelvinToFahrenheit(Kelvin)((Kelvin - 273.15) * 1.8 + 32.0)
+ 
+#define FahrenheitToCelsius(Fahrenheit) ((Fahrenheit - 32.0) * 5/9)
+#define FahrenhietToKelvin(Fahrenheit) ((Fahrenheit - 32.0) * 5/9 + 273.15)
+ 
+int main()
+{
+    float Celsius, Kelvin, Fahrenheit;
+ 
+    Celsius = 150.0;
+    printf("150-degree   Celsius  = %f-degree   Kelvin \n ",CelsiusToKelvin(Celsius));
+    printf("150-degree   Celsius =  %f-degree Fahrenheit\n ",CelsiusToFahrenheit(Celsius));
+ 
+    Kelvin = 150.0;
+    printf("150-degree   Kelvin  = %f-degree   Celsius \n",KelvintoCelsius(Kelvin));
+    printf("150-degree   Kelvin  = %f-degree Fahrenheit \n",KelvinToFahrenheit(Kelvin));
+ 
+    Fahrenheit = 150.0;
+    printf("150-degree Fahrenheit =  %f-degree   Celsius \n",FahrenheitToCelsius(Fahrenheit));
+    printf("150-degree Fahrenheit =  %f-degree   Kelvin \n",FahrenhietToKelvin(Fahrenheit));
+    return 0;
+}
